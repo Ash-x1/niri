@@ -1,0 +1,5 @@
+[opener]
+image = [
+  { run = 'kitty +kitten icat "$@"', desc = "Open image with kitty", block = true }
+]
+

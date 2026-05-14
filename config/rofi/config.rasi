@@ -1,0 +1,138 @@
+/**
+ * Matugen Dynamic Rofi Theme
+ **/
+
+@theme "colors.rasi"
+
+configuration {
+    modi:                       "drun,run,window";
+    show-icons:                 true;
+
+    display-drun:               " ";
+    display-run:                " ";
+    display-window:             " ";
+
+    drun-display-format:        "{name}";
+    font:                       "JetBrainsMono Nerd Font Medium 15";
+}
+
+window {
+    transparency:               "real";
+    location:                   center;
+    anchor:                     center;
+    fullscreen:                 false;
+
+    width:                      600px;
+
+    margin:                     0px;
+    padding:                    0px;
+
+    border:                     2px solid;
+    border-radius:              20px;
+
+    border-color:               @outline;
+    background-color:           @surface;
+}
+
+mainbox {
+    spacing:                    10px;
+
+    margin:                     20px;
+    padding:                    10px;
+
+    background-color:           transparent;
+
+    children:                   [ "inputbar", "listview" ];
+}
+
+inputbar {
+    spacing:                    10px;
+
+    padding:                    15px;
+
+    border-radius:              12px;
+
+    background-color:           @surface-container;
+    text-color:                 @on-surface;
+
+    children:                   [ "prompt", "entry" ];
+}
+
+prompt {
+    background-color:           transparent;
+    text-color:                 @primary;
+}
+
+entry {
+    background-color:           transparent;
+    text-color:                 @on-surface;
+
+    placeholder:                "Search...";
+    placeholder-color:          @on-surface-variant;
+}
+
+listview {
+    columns:                    1;
+    lines:                      8;
+
+    cycle:                      true;
+    dynamic:                    true;
+    scrollbar:                  false;
+
+    spacing:                    5px;
+
+    background-color:           transparent;
+    text-color:                 @on-surface;
+}
+
+element {
+    spacing:                    10px;
+
+    padding:                    10px;
+
+    border-radius:              10px;
+
+    background-color:           transparent;
+    text-color:                 @on-surface;
+}
+
+element normal.normal {
+    background-color:           transparent;
+    text-color:                 @on-surface;
+}
+
+element selected.normal {
+    background-color:           @primary-container;
+    text-color:                 @on-primary-container;
+}
+
+element alternate.normal {
+    background-color:           transparent;
+    text-color:                 @on-surface;
+}
+
+element-icon {
+    background-color:           transparent;
+    size:                       24px;
+}
+
+element-text {
+    background-color:           transparent;
+    text-color:                 inherit;
+
+    highlight:                  @primary;
+
+    vertical-align:             0.5;
+    horizontal-align:           0.0;
+}
+
+error-message {
+    padding:                    15px;
+
+    border:                     2px solid;
+    border-radius:              12px;
+
+    border-color:               @error;
+    background-color:           @error-container;
+    text-color:                 @on-error-container;
+}

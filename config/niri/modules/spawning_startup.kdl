@@ -1,0 +1,7 @@
+spawn-at-startup "waybar"
+spawn-at-startup "swaync"
+// spawn-at-startup "waypaper" "--backend" "swaybg" "--restore"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "sh" "-c" "sleep 2 && wl-paste --watch cliphist store"
+spawn-at-startup "nm-applet" "--indicator"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"

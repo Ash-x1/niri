@@ -1,0 +1,239 @@
+@import "colors.css";
+
+/* ===== MATUGEN COLOR ALIASES ===== */
+@define-color accent @primary;
+@define-color accent_soft @secondary;
+
+@define-color surface @surface;
+@define-color surface_alt @surface_container;
+
+@define-color text @on_surface;
+
+@define-color critical @error;
+@define-color warning @tertiary;
+
+/* ===== GLOBAL ===== */
+* {
+    outline: none;
+    font-family: "SF Pro Text";
+    font-size: 18px;
+    text-shadow: none;
+    color: @text;
+    background: transparent;
+}
+
+/* ===== CONTROL CENTER ===== */
+.control-center {
+    background-color: alpha(@surface, 0.85);
+    border-radius: 18px;
+    padding: 8px;
+    box-shadow: inset 0 0 10px alpha(@accent, 0.25);
+}
+
+/* ===== NOTIFICATIONS ===== */
+.notification {
+    background-color: alpha(@surface, 0.75);
+    border-radius: 14px;
+    margin: 6px 4px;
+    box-shadow: inset 0 0 6px alpha(@accent_soft, 0.25);
+}
+
+.notification.low,
+.notification.normal {
+    background-color: alpha(@surface, 0.65);
+}
+
+.notification.critical {
+    background-color: alpha(@critical, 0.25);
+    box-shadow: inset 0 0 8px alpha(@critical, 0.55);
+}
+
+.notification-content {
+    padding: 14px 12px 12px 18px;
+}
+
+.summary {
+    font-size: 1.1rem;
+    color: @primary_fixed;
+}
+
+.time {
+    font-size: 0.8rem;
+    color: @secondary;
+}
+
+.body {
+    font-size: 1rem;
+    color: @text;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.close-button {
+    background-color: alpha(@surface_alt, 0.8);
+    border-radius: 100px;
+}
+
+.close-button:hover {
+    background-color: alpha(@accent, 0.85);
+}
+
+/* ===== GROUP HEADERS ===== */
+.notification-group-header,
+.notification-group-icon {
+    font-size: 0.9rem;
+    color: @secondary;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+    background-color: @surface_alt;
+    border-radius: 10px;
+}
+
+.notification-group-collapse-button:hover {
+    background-color: alpha(@accent, 0.8);
+}
+
+.notification-group-close-all-button:hover {
+    background-color: alpha(@critical, 0.75);
+}
+
+/* ===== SLIDERS ===== */
+trough highlight {
+    background: @accent;
+}
+
+scale trough {
+    margin: 0rem 1rem;
+    background-color: @surface_alt;
+    min-height: 8px;
+    min-width: 70px;
+    border-radius: 10px;
+}
+
+slider {
+    background-color: @text;
+    border-radius: 100px;
+}
+
+tooltip {
+    background-color: @surface_alt;
+    color: @text;
+}
+
+/* ===== BUTTON GRID ===== */
+.widget-buttons-grid {
+    font-size: 1rem;
+    padding: 18px 18px 10px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    background: alpha(@surface_alt, 0.7);
+    border-radius: 12px;
+    min-width: 60px;
+    min-height: 30px;
+    padding: 6px;
+    margin: 0 3px;
+    box-shadow: inset 0 0 4px alpha(@accent_soft, 0.25);
+    transition: all .25s ease;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: alpha(@accent, 0.45);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+    background: @accent;
+    color: @on_primary;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked:hover {
+    background: alpha(@accent, 0.8);
+}
+
+/* ===== MPRIS ===== */
+@define-color mpris-album-art-overlay rgba(0,0,0,0.55);
+
+.widget-mpris .widget-mpris-player {
+    padding: 16px;
+    margin: 16px 20px;
+    background-color: @mpris-album-art-overlay;
+    border-radius: 12px;
+    box-shadow: inset 0 0 8px alpha(@accent_soft, 0.25);
+}
+
+.widget-mpris .widget-mpris-player .widget-mpris-album-art {
+    border-radius: 12px;
+}
+
+.widget-mpris-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: @text;
+}
+
+.widget-mpris-subtitle {
+    font-size: 1rem;
+    color: @secondary;
+}
+
+/* ===== VOLUME / BACKLIGHT ===== */
+.widget-volume {
+    padding: 6px 5px 5px 5px;
+    font-size: 1.3rem;
+}
+
+.widget-backlight {
+    padding: 0 0 3px 16px;
+    font-size: 1.1rem;
+}
+
+/* ===== DND ===== */
+.widget-dnd {
+    font-weight: bold;
+    padding: 18px 14px 14px;
+}
+
+.widget-dnd > switch {
+    border-radius: 100px;
+    background: @accent;
+    padding: 3px;
+}
+
+.widget-dnd > switch:checked {
+    background: @warning;
+}
+
+.widget-dnd > switch slider {
+    background: @surface;
+    border-radius: 12px;
+    min-width: 18px;
+    min-height: 18px;
+}
+
+/* ===== TITLE ===== */
+.widget-title {
+    font-weight: bold;
+    padding: 14px;
+}
+
+.widget-title > label {
+    font-size: 1.5rem;
+    color: @text;
+}
+
+.widget-title > button {
+    background: @accent;
+    color: @on_primary;
+    border-radius: 100px;
+    padding: 0px 6px;
+}
+
+.widget-title > button:hover {
+    background: alpha(@accent, 0.8);
+}
+
+/* ===== SCROLLBAR ===== */
+scrollbar {
+    opacity: 0;
+}

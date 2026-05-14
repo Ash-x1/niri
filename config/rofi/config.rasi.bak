@@ -1,0 +1,151 @@
+/**
+ * تصميم Rofi بسيط وعصري - Dark Purple + Yellow Theme
+ **/
+
+configuration {
+    modi:                       "drun,run,window";
+    show-icons:                 true;
+    display-drun:               " ";
+    display-run:                " ";
+    display-window:             " ";
+    drun-display-format:        "{name} ";
+    font:                       "JetBrainsMono Nerd Font Medium 15";
+}
+
+* {
+    /* Main Colors */
+    background:                 #151320;
+    background-alt:             #1E1B2E;
+
+    foreground:                 #F8F8F2;
+    foreground-alt:             #B8B8C2;
+
+    selected:                   #FACC15;
+    active:                     #C084FC;
+    urgent:                     #EF4444;
+
+    border-color:               #8B5CF6;
+
+    selected-normal-background: #FACC15;
+    selected-normal-foreground: #151320;
+}
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       600px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      2px solid;
+    border-radius:               20px;
+    border-color:                @border-color;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      20px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     15px;
+    border:                      0px solid;
+    border-radius:               12px;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  #C084FC;
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      text;
+    placeholder:                 "Search...";
+    placeholder-color:           @foreground-alt;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    spacing:                     5px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               10px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  #151320;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   bold #C084FC;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+error-message {
+    padding:                     15px;
+    border:                      2px solid;
+    border-radius:               12px;
+    border-color:                @border-color;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}

@@ -1,0 +1,38 @@
+# config_directory/config.toml
+[config.wallpaper]
+command = "awww"
+arguments = ["img", "--transition-type", "random"]
+set = true
+#...
+
+[config]
+# ...
+[templates.kitty]
+input_path = './templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "kitty +kitten themes --reload-in=all Matugen"
+# ...
+
+[templates.waybar]
+input_path = './templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+# ...
+
+[templates.rofi]
+input_path = './templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+# ...
+
+[templates.niri]
+input_path = './templates/niri-colors.kdl'
+output_path = '~/.config/niri/colors.kdl'
+post_hook = 'niri msg action load-config-file'
+# ...
+
+[templates.swaync]
+input_path = "./templates/colors.css"
+output_path = "~/.config/swaync/colors.css"
+post_hook = "swaync-client -rs"
+# ...
+

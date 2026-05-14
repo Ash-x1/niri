@@ -1,0 +1,228 @@
+/* Dark purple + warm yellow theme */
+
+@define-color accent #c77dff;
+@define-color accent_soft #9f7aea;
+@define-color surface #14111f;
+@define-color surface_alt #221b33;
+@define-color text #f5e6c8;
+
+/* ===== GLOBAL ===== */
+* {
+    outline: none;
+    font-family: "SF Pro Text";
+    font-size: 18px;
+    text-shadow: none;
+    color: @text;
+    background: transparent;
+}
+
+/* ===== CONTROL CENTER ===== */
+.control-center {
+    background-color: alpha(@surface, 0.85);
+    border-radius: 18px;
+    padding: 8px;
+    box-shadow: inset 0 0 10px alpha(@accent, 0.25);
+}
+
+/* ===== NOTIFICATIONS ===== */
+.notification {
+    background-color: alpha(@surface, 0.75);
+    border-radius: 14px;
+    margin: 6px 4px;
+    box-shadow: inset 0 0 6px alpha(@accent_soft, 0.25);
+}
+
+.notification.low,
+.notification.normal {
+    background-color: alpha(@surface, 0.65);
+}
+
+.notification.critical {
+    background-color: alpha(#ff5f87, 0.35);
+    box-shadow: inset 0 0 8px alpha(#ff5f87, 0.6);
+}
+
+.notification-content {
+    padding: 14px 12px 12px 18px;
+}
+
+.summary {
+    font-size: 1.1rem;
+    color: #e0aaff;
+}
+
+.time {
+    font-size: 0.8rem;
+    color: #9f7aea;
+}
+
+.body {
+    font-size: 1rem;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.close-button {
+    background-color: alpha(@surface_alt, 0.8);
+    border-radius: 100px;
+}
+
+.close-button:hover {
+    background-color: alpha(@accent, 0.85);
+}
+
+/* ===== GROUP HEADERS ===== */
+.notification-group-header,
+.notification-group-icon {
+    font-size: 0.9rem;
+    color: #9f7aea;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+    background-color: @surface_alt;
+    border-radius: 10px;
+}
+
+.notification-group-collapse-button:hover {
+    background-color: alpha(@accent, 0.8);
+}
+
+.notification-group-close-all-button:hover {
+    background-color: alpha(#ff5f87, 0.8);
+}
+
+/* ===== SLIDERS ===== */
+trough highlight {
+    background: @accent;
+}
+
+scale trough {
+    margin: 0rem 1rem;
+    background-color: @surface_alt;
+    min-height: 8px;
+    min-width: 70px;
+    border-radius: 10px;
+}
+
+slider {
+    background-color: #f5e6c8;
+    border-radius: 100px;
+}
+
+tooltip {
+    background-color: @surface_alt;
+    color: @text;
+}
+
+/* ===== BUTTON GRID ===== */
+.widget-buttons-grid {
+    font-size: 1rem;
+    padding: 18px 18px 10px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    background: alpha(@surface_alt, 0.7);
+    border-radius: 12px;
+    min-width: 60px;
+    min-height: 30px;
+    padding: 6px;
+    margin: 0 3px;
+    box-shadow: inset 0 0 4px alpha(@accent_soft, 0.25);
+    transition: all .25s ease;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: alpha(@accent, 0.5);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+    background: @accent;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked:hover {
+    background: alpha(@accent, 0.8);
+}
+
+/* ===== MPRIS ===== */
+@define-color mpris-album-art-overlay rgba(0,0,0,0.55);
+
+.widget-mpris .widget-mpris-player {
+    padding: 16px;
+    margin: 16px 20px;
+    background-color: @mpris-album-art-overlay;
+    border-radius: 12px;
+    box-shadow: inset 0 0 8px alpha(@accent_soft, 0.25);
+}
+
+.widget-mpris .widget-mpris-player .widget-mpris-album-art {
+    border-radius: 12px;
+}
+
+.widget-mpris-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.widget-mpris-subtitle {
+    font-size: 1rem;
+    color: #9f7aea;
+}
+
+/* ===== VOLUME / BACKLIGHT ===== */
+.widget-volume {
+    padding: 6px 5px 5px 5px;
+    font-size: 1.3rem;
+}
+
+.widget-backlight {
+    padding: 0 0 3px 16px;
+    font-size: 1.1rem;
+}
+
+/* ===== DND ===== */
+.widget-dnd {
+    font-weight: bold;
+    padding: 18px 14px 14px;
+}
+
+.widget-dnd > switch {
+    border-radius: 100px;
+    background: @accent;
+    padding: 3px;
+}
+
+.widget-dnd > switch:checked {
+    background: #ffd166;
+}
+
+.widget-dnd > switch slider {
+    background: @surface;
+    border-radius: 12px;
+    min-width: 18px;
+    min-height: 18px;
+}
+
+/* ===== TITLE ===== */
+.widget-title {
+    font-weight: bold;
+    padding: 14px;
+}
+
+.widget-title > label {
+    font-size: 1.5rem;
+}
+
+.widget-title > button {
+    background: @accent;
+    border-radius: 100px;
+    padding: 0px 6px;
+}
+
+.widget-title > button:hover {
+    background: alpha(@accent, 0.8);
+}
+
+/* ===== SCROLLBAR ===== */
+scrollbar {
+    opacity: 0;
+}

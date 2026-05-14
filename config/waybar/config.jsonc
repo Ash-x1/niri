@@ -1,0 +1,128 @@
+{
+  "spacing": 2,
+  "modules-left": ["custom/cava", "niri/window"/*"hyprland/workspaces"*/],
+  "modules-center": [/*"hyprland/window"*/ "clock", "custom/swaync", "niri/workspaces"],
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "backlight",
+    "hyprland/language",
+    "keyboard-state",
+    "battery"
+    //"clock",
+    //"custom/swaync",
+  ],
+
+  "custom/cava": {
+    "format": "{}",
+    "exec": "~/.config/waybar/cava.sh",
+    "restart-interval": 1,
+    "hide-empty": true,
+    "tooltip": false,
+  },
+
+  "niri/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+    },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": 5,
+      "HDMI-A-1": 3,
+    },
+  },
+
+  "niri/window": {
+    "format": "{}",
+    "max-length": 30,
+    "tooltip": false,
+    "all-outputs": true,
+  },
+
+  "pulseaudio": {
+    "format": "{icon}   {volume}% {format_source}",
+    "format-bluetooth": "{icon}   {volume}% {format_source}",
+    "format-bluetooth-muted": "󰝟   {icon} {format_source}",
+    "format-muted": "󰝟   {format_source}",
+    "format-source": "󰍬   {volume}%",
+    "format-source-muted": "󰍭",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "󱡒",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["󰕿", "󰖀", "󰕾"],
+    },
+    "on-click": "pavucontrol",
+    "tooltip": false,
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}  {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "min-length": 6,
+    "tooltip": false,
+  },
+
+  "tray": {
+    "icon-size": 15,
+    "spacing": 5,
+    "tooltip": false,
+  },
+
+  "hyprland/language": {
+    "format": "󰌌  {short}",
+    "tooltip-format": "Language: {long}",
+  },
+
+  "keyboard-state": {
+    "capslock": true,
+    "format": "{name} {icon} ",
+    "format-icons": {
+      "locked": " ",
+      "unlocked": "",
+    },
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon}   {capacity}%",
+    "format-charging": "   {capacity}%",
+    "format-plugged": "   {capacity}%",
+    "format-alt": "{icon}   {time}",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": false,
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip": false,
+  },
+
+  "custom/swaync": {
+    "format": "",
+    "on-click": "swaync-client -t",
+    "on-click-right": "swaync-client -c",
+    "tooltip": false,
+  },
+}
